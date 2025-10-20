@@ -3,7 +3,6 @@ package view;
 import interface_adapter.logged_in.ChangePasswordController;
 import interface_adapter.logged_in.LoggedInState;
 import interface_adapter.logged_in.LoggedInViewModel;
-import interface_adapter.login.LoginController;
 import interface_adapter.logout.LogoutController;
 
 import javax.swing.*;
@@ -139,5 +138,9 @@ public class LoggedInView extends JPanel implements ActionListener, PropertyChan
         this.changePasswordController = changePasswordController;
     }
 
-    public void setLogoutController(LogoutController logoutController) { this.logoutController = logoutController; }
+    public void setLogoutController(LogoutController logoutController) {
+        // save the logout controller in the instance variable
+        this.logoutController = logoutController;
+        this.logoutController.execute();
+    }
 }
