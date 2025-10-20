@@ -46,7 +46,7 @@ public class LogoutPresenter implements LogoutOutputBoundary {
         // 3. firePropertyChanged so that the View that is listening is updated.
         LoginState loginState = this.loginViewModel.getState();
         loginState.setUsername(oldUsername);
-        this.loggedInViewModel.firePropertyChange();
+        this.loginViewModel.firePropertyChange();
 
         // This code tells the View Manager to switch to the LoginView.
         this.viewManagerModel.setState(loginViewModel.getViewName());
